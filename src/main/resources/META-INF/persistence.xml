@@ -5,7 +5,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" 
              version="1.0">
              
-   <persistence-unit name="FantaFormazioneWebService" transaction-type="JTA">
+   <persistence-unit name="FantaFormazioneWeb" transaction-type="JTA">
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
       <jta-data-source>java:jboss/FantaFormazioneWebDatasource</jta-data-source>
       <properties>
@@ -13,6 +13,7 @@
          <property name="hibernate.hbm2ddl.auto" value="none"/>
          <property name="hibernate.show_sql" value="false"/>
          <property name="hibernate.format_sql" value="true"/>
+         <property name="jboss.entity.manager.factory.jndi.name" value="java:/FantaFormazioneWebEntityManagerFactory"/>
       </properties>
    </persistence-unit>
     
