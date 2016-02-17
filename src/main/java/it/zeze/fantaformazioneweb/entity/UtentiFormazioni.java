@@ -33,6 +33,7 @@ public class UtentiFormazioni implements java.io.Serializable {
 	private Integer id;
 	private Utenti utenti;
 	private String nomeFormazione;
+	private BigDecimal crediti;
 	@JsonIgnore
 	private Set<ProbabiliFormazioni> probabiliFormazionis = new HashSet<ProbabiliFormazioni>(0);
 	@JsonIgnore
