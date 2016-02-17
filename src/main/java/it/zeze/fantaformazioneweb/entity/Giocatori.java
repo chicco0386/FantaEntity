@@ -2,6 +2,7 @@ package it.zeze.fantaformazioneweb.entity;
 
 // Generated 19-gen-2012 10.57.55 by Hibernate Tools 3.4.0.CR1
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,6 +37,9 @@ public class Giocatori implements java.io.Serializable {
 	private Squadre squadre = new Squadre();
 	private String nome;
 	private String ruolo;
+	private String stagione;
+	private BigDecimal quotazIniziale;
+	private BigDecimal quotazAttuale;
 	@JsonIgnore
 	private Set<ProbabiliFormazioniFg> probabiliFormazioniFgs = new HashSet<ProbabiliFormazioniFg>(0);
 	@JsonIgnore
@@ -50,10 +54,14 @@ public class Giocatori implements java.io.Serializable {
 	public Giocatori() {
 	}
 
-	public Giocatori(Squadre squadre, String nome, String ruolo) {
+	public Giocatori(int id, Squadre squadre, String nome, String ruolo, String stagione, BigDecimal quotazIniziale, BigDecimal quotazAttuale) {
+		this.id = id;
 		this.squadre = squadre;
 		this.nome = nome;
 		this.ruolo = ruolo;
+		this.stagione = stagione;
+		this.quotazIniziale = quotazIniziale;
+		this.quotazAttuale = quotazAttuale;
 	}
 
 	public Giocatori(Squadre squadre, String nome, String ruolo, Set<ProbabiliFormazioniFg> probabiliFormazioniFgs, Set<ProbabiliFormazioniGazzetta> probabiliFormazioniGazzettas, Set<Formazioni> formazionis, Set<Statistiche> statistiches, Set<ProbabiliFormazioni> probabiliFormazionis) {
@@ -109,6 +117,34 @@ public class Giocatori implements java.io.Serializable {
 
 	public void setRuolo(String ruolo) {
 		this.ruolo = ruolo;
+	}
+
+	@Column(name = "stagione", nullable = true, length = 10)
+	@Length(max = 10)
+	public String getStagione() {
+		return stagione;
+	}
+
+	public void setStagione(String stagione) {
+		this.stagione = stagione;
+	}
+
+	@Column(name = "quotaz_iniziale", nullable = true, precision = 4, scale = 2)
+	public BigDecimal getQuotazIniziale() {
+		return quotazIniziale;
+	}
+
+	public void setQuotazIniziale(BigDecimal quotazIniziale) {
+		this.quotazIniziale = quotazIniziale;
+	}
+
+	@Column(name = "quotaz_attuale", nullable = true, precision = 4, scale = 2)
+	public BigDecimal getQuotazAttuale() {
+		return quotazAttuale;
+	}
+
+	public void setQuotazAttuale(BigDecimal quotazAttuale) {
+		this.quotazAttuale = quotazAttuale;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "giocatori")

@@ -2,6 +2,8 @@ package it.zeze.fantaformazioneweb.entity;
 
 // Generated 19-gen-2012 10.57.55 by Hibernate Tools 3.4.0.CR1
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 

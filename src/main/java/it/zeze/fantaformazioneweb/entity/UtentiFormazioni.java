@@ -2,6 +2,7 @@ package it.zeze.fantaformazioneweb.entity;
 
 // Generated 19-gen-2012 10.57.55 by Hibernate Tools 3.4.0.CR1
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -83,6 +84,15 @@ public class UtentiFormazioni implements java.io.Serializable {
 
 	public void setNomeFormazione(String nomeFormazione) {
 		this.nomeFormazione = nomeFormazione;
+	}
+
+	@Column(name = "crediti", nullable = true, precision = 4, scale = 2)
+	public BigDecimal getCrediti() {
+		return crediti;
+	}
+
+	public void setCrediti(BigDecimal crediti) {
+		this.crediti = crediti;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "utentiFormazioni")

@@ -2,6 +2,8 @@ package it.zeze.fantaformazioneweb.entity;
 
 // Generated 19-gen-2012 10.57.55 by Hibernate Tools 3.4.0.CR1
 
+import java.math.BigDecimal;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -23,6 +25,7 @@ import org.hibernate.validator.NotNull;
 public class Formazioni implements java.io.Serializable {
 
 	private FormazioniId id;
+	private BigDecimal prezzoAcquisto;
 	private UtentiFormazioni utentiFormazioni;
 	private Giocatori giocatori;
 
@@ -68,6 +71,15 @@ public class Formazioni implements java.io.Serializable {
 
 	public void setGiocatori(Giocatori giocatori) {
 		this.giocatori = giocatori;
+	}
+
+	@Column(name = "prezzo_acquisto", nullable = true, precision = 2, scale = 2)
+	public BigDecimal getPrezzoAcquisto() {
+		return prezzoAcquisto;
+	}
+
+	public void setPrezzoAcquisto(BigDecimal prezzoAcquisto) {
+		this.prezzoAcquisto = prezzoAcquisto;
 	}
 
 }
