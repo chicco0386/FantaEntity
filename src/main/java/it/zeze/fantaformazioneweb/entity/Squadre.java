@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.Length;
 
 /**
@@ -27,11 +27,8 @@ public class Squadre implements java.io.Serializable {
 	
 	private int id;
 	private String nome;
-	@JsonIgnore
 	private Set<Giocatori> giocatoris = new HashSet<Giocatori>(0);
-	@JsonIgnore
 	private Set<Calendario> calendariosForIdSquadraCasa = new HashSet<Calendario>(0);
-	@JsonIgnore
 	private Set<Calendario> calendariosForIdSquadraFuoriCasa = new HashSet<Calendario>(0);
 
 	public Squadre() {
@@ -65,6 +62,7 @@ public class Squadre implements java.io.Serializable {
 		this.nome = nome;
 	}
 
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "squadre")
 	public Set<Giocatori> getGiocatoris() {
 		return this.giocatoris;
@@ -74,6 +72,7 @@ public class Squadre implements java.io.Serializable {
 		this.giocatoris = giocatoris;
 	}
 
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "squadreByIdSquadraCasa")
 	public Set<Calendario> getCalendariosForIdSquadraCasa() {
 		return this.calendariosForIdSquadraCasa;
@@ -82,7 +81,8 @@ public class Squadre implements java.io.Serializable {
 	public void setCalendariosForIdSquadraCasa(Set<Calendario> calendariosForIdSquadraCasa) {
 		this.calendariosForIdSquadraCasa = calendariosForIdSquadraCasa;
 	}
-
+	
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "squadreByIdSquadraFuoriCasa")
 	public Set<Calendario> getCalendariosForIdSquadraFuoriCasa() {
 		return this.calendariosForIdSquadraFuoriCasa;
