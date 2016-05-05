@@ -23,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "calendario")
 public class Calendario implements java.io.Serializable {
 
+	private static final long serialVersionUID = 5678535905202308718L;
+	
 	private CalendarioId id;
 	private Squadre squadreByIdSquadraFuoriCasa;
 	private Giornate giornate;

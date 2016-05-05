@@ -14,6 +14,10 @@ import javax.persistence.Transient;
 @Embeddable
 public class StatisticheId implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4946866710838034302L;
 	private int idGiocatore;
 	private int idGiornata;
 	private BigDecimal mediaVoto;

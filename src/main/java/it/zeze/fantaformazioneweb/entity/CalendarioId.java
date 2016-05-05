@@ -11,6 +11,8 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class CalendarioId implements java.io.Serializable {
 
+	private static final long serialVersionUID = 8114304717620329583L;
+	
 	private int idGiornata;
 	private int idSquadraCasa;
 	private int idSquadraFuoriCasa;

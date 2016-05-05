@@ -16,6 +16,10 @@ import org.hibernate.validator.Length;
 @Embeddable
 public class ProbabiliFormazioniId implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3168200635972068497L;
 	private int idGiornate;
 	private int idUtentiFormazioni;
 	private int idGiocatore;

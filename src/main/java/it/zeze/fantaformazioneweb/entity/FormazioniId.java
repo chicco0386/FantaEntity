@@ -13,6 +13,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class FormazioniId implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9108490746833931922L;
 	private int idGiocatore;
 	private int idUtentiFormazioni;
 

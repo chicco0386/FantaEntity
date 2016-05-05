@@ -24,6 +24,8 @@ import org.hibernate.validator.NotNull;
 @Table(name = "formazioni")
 public class Formazioni implements java.io.Serializable {
 
+	private static final long serialVersionUID = -57866174038913453L;
+	
 	private FormazioniId id;
 	private BigDecimal prezzoAcquisto;
 	private UtentiFormazioni utentiFormazioni;

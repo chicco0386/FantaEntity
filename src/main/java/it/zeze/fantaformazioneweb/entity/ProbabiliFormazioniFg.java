@@ -22,6 +22,10 @@ import org.hibernate.validator.NotNull;
 @Table(name = "probabili_formazioni_fg")
 public class ProbabiliFormazioniFg implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1640720095152061404L;
 	private ProbabiliFormazioniFgId id;
 	@JsonIgnore
 	private Giocatori giocatori;

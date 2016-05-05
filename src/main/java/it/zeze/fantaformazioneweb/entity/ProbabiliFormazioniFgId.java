@@ -11,6 +11,10 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class ProbabiliFormazioniFgId implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7406712459277104798L;
 	private int idGiocatore;
 	private int idGiornata;
 	private boolean titolare;

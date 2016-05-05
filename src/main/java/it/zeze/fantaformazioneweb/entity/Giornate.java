@@ -30,6 +30,10 @@ import org.hibernate.validator.NotNull;
 @Table(name = "giornate")
 public class Giornate implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -416913067688553886L;
 	private Integer id;
 	private Integer numeroGiornata;
 	private String stagione;

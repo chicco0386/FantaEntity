@@ -22,6 +22,10 @@ import org.hibernate.validator.NotNull;
 @Table(name = "statistiche")
 public class Statistiche implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4521984110155642028L;
 	private StatisticheId id = new StatisticheId();
 	@JsonIgnore
 	private Giocatori giocatori;

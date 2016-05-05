@@ -22,6 +22,10 @@ import org.hibernate.validator.NotNull;
 @Table(name = "probabili_formazioni_gazzetta")
 public class ProbabiliFormazioniGazzetta implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7154460663790131400L;
 	private ProbabiliFormazioniGazzettaId id;
 	@JsonIgnore
 	private Giocatori giocatori;

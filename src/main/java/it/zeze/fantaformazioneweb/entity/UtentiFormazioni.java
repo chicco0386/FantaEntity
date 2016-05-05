@@ -30,6 +30,10 @@ import org.hibernate.validator.NotNull;
 @Table(name = "utenti_formazioni")
 public class UtentiFormazioni implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3075578724407276978L;
 	private Integer id;
 	private Utenti utenti;
 	private String nomeFormazione;
