@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class GiocatoriWrap implements java.io.Serializable {
+import it.zeze.fantaformazioneweb.entity.Giocatori;
+
+public class GiocatoriWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = -4691787156170180676L;
 
@@ -20,6 +22,16 @@ public abstract class GiocatoriWrap implements java.io.Serializable {
 	private Set<FormazioniWrap> formazionis = new HashSet<FormazioniWrap>(0);
 	private Set<StatisticheWrap> statistiches = new HashSet<StatisticheWrap>(0);
 	private Set<ProbabiliFormazioniWrap> probabiliFormazionis = new HashSet<ProbabiliFormazioniWrap>(0);
+	
+	public GiocatoriWrap(Giocatori toWrap){
+		this.id = toWrap.getId();
+		this.squadre = new SquadreWrap(toWrap.getSquadre());
+		this.nome = toWrap.getNome();
+		this.ruolo = toWrap.getRuolo();
+		this.stagione = toWrap.getStagione();
+		this.quotazIniziale = toWrap.getQuotazIniziale();
+		this.quotazAttuale = toWrap.getQuotazAttuale();
+	}
 
 	public int getId() {
 		return id;
