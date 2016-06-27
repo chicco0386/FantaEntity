@@ -23,6 +23,8 @@ public class GiocatoriWrap implements java.io.Serializable {
 	private Set<StatisticheWrap> statistiches = new HashSet<StatisticheWrap>(0);
 	private Set<ProbabiliFormazioniWrap> probabiliFormazionis = new HashSet<ProbabiliFormazioniWrap>(0);
 	
+	public GiocatoriWrap(){};
+	
 	public GiocatoriWrap(Giocatori toWrap){
 		this.id = toWrap.getId();
 		this.squadre = new SquadreWrap(toWrap.getSquadre());
@@ -34,7 +36,7 @@ public class GiocatoriWrap implements java.io.Serializable {
 	}
 	
 	public Giocatori unwrap(){
-		Giocatori toReturn = new Giocatori(id, null, nome, ruolo, stagione, quotazIniziale, quotazAttuale);
+		Giocatori toReturn = new Giocatori(id, nome, ruolo, stagione, quotazIniziale, quotazAttuale);
 		if (squadre != null) toReturn.setSquadre(squadre.unwrap());
 		return toReturn;
 	}

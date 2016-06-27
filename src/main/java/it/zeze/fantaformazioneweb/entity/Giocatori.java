@@ -53,6 +53,15 @@ public class Giocatori implements java.io.Serializable {
 
 	public Giocatori() {
 	}
+	
+	public Giocatori(int id, String nome, String ruolo, String stagione, BigDecimal quotazIniziale, BigDecimal quotazAttuale) {
+		this.id = id;
+		this.nome = nome;
+		this.ruolo = ruolo;
+		this.stagione = stagione;
+		this.quotazIniziale = quotazIniziale;
+		this.quotazAttuale = quotazAttuale;
+	}
 
 	public Giocatori(int id, Squadre squadre, String nome, String ruolo, String stagione, BigDecimal quotazIniziale, BigDecimal quotazAttuale) {
 		this.id = id;
