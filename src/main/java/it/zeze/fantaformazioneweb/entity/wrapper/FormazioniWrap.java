@@ -2,7 +2,9 @@ package it.zeze.fantaformazioneweb.entity.wrapper;
 
 import java.math.BigDecimal;
 
-public abstract class FormazioniWrap implements java.io.Serializable {
+import it.zeze.fantaformazioneweb.entity.Formazioni;
+
+public class FormazioniWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = 5390409177660627974L;
 
@@ -10,6 +12,13 @@ public abstract class FormazioniWrap implements java.io.Serializable {
 	private BigDecimal prezzoAcquisto;
 	private UtentiFormazioniWrap utentiFormazioni;
 	private GiocatoriWrap giocatori;
+	
+	public FormazioniWrap(Formazioni toCopy) {
+		id = new FormazioniIdWrap(toCopy.getId());
+		prezzoAcquisto = toCopy.getPrezzoAcquisto();
+		utentiFormazioni = new UtentiFormazioniWrap(toCopy.getUtentiFormazioni());
+		giocatori = new GiocatoriWrap(toCopy.getGiocatori());
+	}
 
 	public FormazioniIdWrap getId() {
 		return id;

@@ -33,6 +33,11 @@ public class Squadre implements java.io.Serializable {
 
 	public Squadre() {
 	}
+	
+	public Squadre(int id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
 
 	public Squadre(String nome, Set<Giocatori> giocatoris, Set<Calendario> calendariosForIdSquadraCasa, Set<Calendario> calendariosForIdSquadraFuoriCasa) {
 		this.nome = nome;

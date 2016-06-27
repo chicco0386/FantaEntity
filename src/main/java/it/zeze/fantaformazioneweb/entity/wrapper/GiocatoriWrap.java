@@ -32,6 +32,12 @@ public class GiocatoriWrap implements java.io.Serializable {
 		this.quotazIniziale = toWrap.getQuotazIniziale();
 		this.quotazAttuale = toWrap.getQuotazAttuale();
 	}
+	
+	public Giocatori unwrap(){
+		Giocatori toReturn = new Giocatori(id, null, nome, ruolo, stagione, quotazIniziale, quotazAttuale);
+		if (squadre != null) toReturn.setSquadre(squadre.unwrap());
+		return toReturn;
+	}
 
 	public int getId() {
 		return id;

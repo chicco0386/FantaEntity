@@ -2,7 +2,9 @@ package it.zeze.fantaformazioneweb.entity.wrapper;
 
 import java.math.BigDecimal;
 
-public abstract class StatisticheIdWrap implements java.io.Serializable {
+import it.zeze.fantaformazioneweb.entity.StatisticheId;
+
+public  class StatisticheIdWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = 7405273769890408299L;
 
@@ -20,6 +22,28 @@ public abstract class StatisticheIdWrap implements java.io.Serializable {
 	private int ammonizioni;
 	private int espulsioni;
 	private int partiteGiocate = 0;
+	
+	public StatisticheIdWrap(StatisticheId toCopy) {
+		idGiocatore = toCopy.getIdGiocatore();
+		idGiornata = toCopy.getIdGiornata();
+		mediaVoto = toCopy.getMediaVoto();
+		mediaVotoFm = toCopy.getMediaVotoFm();
+		goalFatti = toCopy.getGoalFatti();
+		goalRigore = toCopy.getGoalRigore();
+		goalSubiti = toCopy.getGoalSubiti();
+		rigoriParati = toCopy.getRigoriParati();
+		rigoriSbagliati = toCopy.getRigoriSbagliati();
+		autoreti = toCopy.getAutoreti();
+		assist = toCopy.getAssist();
+		ammonizioni = toCopy.getAmmonizioni();
+		espulsioni = toCopy.getEspulsioni();
+		partiteGiocate = toCopy.getPartiteGiocate();
+	}
+	
+	public StatisticheId unwrap(){
+		StatisticheId toReturn = new StatisticheId(idGiocatore, idGiornata, mediaVoto, mediaVotoFm, goalFatti, goalRigore, goalSubiti, rigoriParati, rigoriSbagliati, autoreti, assist, ammonizioni, espulsioni);
+		return toReturn;
+	}
 
 	public int getIdGiocatore() {
 		return idGiocatore;

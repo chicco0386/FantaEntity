@@ -1,6 +1,8 @@
 package it.zeze.fantaformazioneweb.entity.wrapper;
 
-public abstract class ProbabiliFormazioniIdWrap implements java.io.Serializable {
+import it.zeze.fantaformazioneweb.entity.ProbabiliFormazioniId;
+
+public  class ProbabiliFormazioniIdWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = 3126833251116520164L;
 
@@ -10,6 +12,19 @@ public abstract class ProbabiliFormazioniIdWrap implements java.io.Serializable 
 	private int probTitolare;
 	private int probPanchina;
 	private String note = "";
+	
+	public ProbabiliFormazioniIdWrap(ProbabiliFormazioniId toCopy) {
+		idGiornate = toCopy.getIdGiornate();
+		idUtentiFormazioni = toCopy.getIdUtentiFormazioni();
+		idGiocatore = toCopy.getIdGiocatore();
+		probTitolare = toCopy.getProbTitolare();
+		probPanchina = toCopy.getProbPanchina();
+		note = toCopy.getNote();
+	}
+	
+	public ProbabiliFormazioniId unwrap() {
+		return new ProbabiliFormazioniId(idGiornate, idUtentiFormazioni, idGiocatore, probTitolare, probPanchina, note);
+	}
 
 	public int getIdGiornate() {
 		return idGiornate;

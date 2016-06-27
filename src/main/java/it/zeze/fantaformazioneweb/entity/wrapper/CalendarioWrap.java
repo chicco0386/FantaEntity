@@ -1,6 +1,8 @@
 package it.zeze.fantaformazioneweb.entity.wrapper;
 
-public abstract class CalendarioWrap implements java.io.Serializable {
+import it.zeze.fantaformazioneweb.entity.Calendario;
+
+public class CalendarioWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = -6113345100536770859L;
 
@@ -8,6 +10,13 @@ public abstract class CalendarioWrap implements java.io.Serializable {
 	private SquadreWrap squadreByIdSquadraFuoriCasa;
 	private GiornateWrap giornate;
 	private SquadreWrap squadreByIdSquadraCasa;
+	
+	public CalendarioWrap(Calendario toCopy) {
+		id = new CalendarioIdWrap(toCopy.getId());
+		squadreByIdSquadraFuoriCasa = new SquadreWrap(toCopy.getSquadreByIdSquadraFuoriCasa());
+		giornate = new GiornateWrap(toCopy.getGiornate());
+		squadreByIdSquadraCasa = new SquadreWrap(toCopy.getSquadreByIdSquadraCasa());
+	}
 
 	public CalendarioIdWrap getId() {
 		return id;

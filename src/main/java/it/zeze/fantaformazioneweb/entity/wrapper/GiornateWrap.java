@@ -6,7 +6,7 @@ import java.util.Set;
 
 import it.zeze.fantaformazioneweb.entity.Giornate;
 
-public abstract class GiornateWrap implements java.io.Serializable {
+public  class GiornateWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = -4939490367429370117L;
 	
@@ -23,6 +23,18 @@ public abstract class GiornateWrap implements java.io.Serializable {
 	public GiornateWrap(Giornate toCopy) {
 		id = toCopy.getId();
 		numeroGiornata = toCopy.getNumeroGiornata();
+		stagione = toCopy.getStagione();
+		data = toCopy.getData();
+//		statistiches = toCopy.getStatistiches();
+//		probabiliFormazioniFgs = toCopy.getProbabiliFormazioniFgs();
+//		probabiliFormazioniGazzettas = toCopy.getProbabiliFormazioniGazzettas();
+//		calendarios = toCopy.getCalendarios();
+//		probabiliFormazionis = toCopy.getProbabiliFormazionis();
+	}
+	
+	public Giornate unwrap(){
+		Giornate toReturn = new Giornate(id, numeroGiornata, stagione, data);
+		return toReturn;
 	}
 
 	public Integer getId() {

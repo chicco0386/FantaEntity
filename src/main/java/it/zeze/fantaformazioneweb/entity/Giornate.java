@@ -51,6 +51,13 @@ public class Giornate implements java.io.Serializable {
 
 	public Giornate() {
 	}
+	
+	public Giornate(Integer id, Integer numeroGiornata, String stagione, Date data) {
+		this.id = id;
+		this.numeroGiornata = numeroGiornata;
+		this.stagione = stagione;
+		this.data = data;
+	}
 
 	public Giornate(Date data, Set<Statistiche> statistiches, Set<ProbabiliFormazioniFg> probabiliFormazioniFgs, Set<ProbabiliFormazioniGazzetta> probabiliFormazioniGazzettas, Set<Calendario> calendarios, Set<ProbabiliFormazioni> probabiliFormazionis) {
 		this.data = data;

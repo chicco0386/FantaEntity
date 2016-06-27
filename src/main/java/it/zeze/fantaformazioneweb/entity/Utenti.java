@@ -49,6 +49,15 @@ public class Utenti implements java.io.Serializable {
 		this.password = password;
 		this.mail = mail;
 	}
+	
+	public Utenti(int id, String username, String password, String passwordRepeat, String mail, Date dataRegistrazione, Date dataUltimoAccesso) {
+		this.username = username;
+		this.password = password;
+		this.passwordRepeat = passwordRepeat;
+		this.mail = mail;
+		this.dataRegistrazione = dataRegistrazione;
+		this.dataUltimoAccesso = dataUltimoAccesso;
+	}
 
 	public Utenti(String username, String password, String mail, Date dataRegistrazione, Date dataUltimoAccesso, Set<UtentiFormazioni> utentiFormazionis) {
 		this.username = username;

@@ -17,13 +17,15 @@ public class SquadreWrap implements java.io.Serializable {
 	private Set<GiocatoriWrap> giocatoris = new HashSet<GiocatoriWrap>(0);
 	private Set<CalendarioWrap> calendariosForIdSquadraCasa = new HashSet<CalendarioWrap>(0);
 	private Set<CalendarioWrap> calendariosForIdSquadraFuoriCasa = new HashSet<CalendarioWrap>(0);
-
-	public SquadreWrap() {
-	}
 	
 	public SquadreWrap(Squadre toCopy) {
 		id = toCopy.getId();
 		nome = toCopy.getNome();
+	}
+	
+	public Squadre unwrap(){
+		Squadre toReturn = new Squadre(id, nome);
+		return toReturn;
 	}
 
 	public int getId() {

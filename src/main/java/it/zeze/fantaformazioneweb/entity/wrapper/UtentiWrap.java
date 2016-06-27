@@ -4,7 +4,9 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class UtentiWrap implements java.io.Serializable {
+import it.zeze.fantaformazioneweb.entity.Utenti;
+
+public  class UtentiWrap implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1104818271479726497L;
 
@@ -16,6 +18,21 @@ public abstract class UtentiWrap implements java.io.Serializable {
 	private Date dataRegistrazione;
 	private Date dataUltimoAccesso;
 	private Set<UtentiFormazioniWrap> utentiFormazionis = new HashSet<UtentiFormazioniWrap>(0);
+	
+	public UtentiWrap(Utenti toCopy) {
+		id = toCopy.getId();
+		username = toCopy.getUsername();
+		password = toCopy.getPassword();
+		passwordRepeat = toCopy.getPasswordRepeat();
+		mail = toCopy.getMail();
+		dataRegistrazione = toCopy.getDataRegistrazione();
+		dataUltimoAccesso = toCopy.getDataUltimoAccesso();
+	}
+	
+	public Utenti unwrap(){
+		Utenti toReturn = new Utenti(id, username, password, passwordRepeat, mail, dataRegistrazione, dataUltimoAccesso);
+		return toReturn;
+	}
 
 	public int getId() {
 		return id;
