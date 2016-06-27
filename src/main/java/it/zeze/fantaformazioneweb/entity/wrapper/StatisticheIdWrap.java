@@ -42,6 +42,7 @@ public  class StatisticheIdWrap implements java.io.Serializable {
 	
 	public StatisticheId unwrap(){
 		StatisticheId toReturn = new StatisticheId(idGiocatore, idGiornata, mediaVoto, mediaVotoFm, goalFatti, goalRigore, goalSubiti, rigoriParati, rigoriSbagliati, autoreti, assist, ammonizioni, espulsioni);
+		toReturn.setPartiteGiocate(partiteGiocate);
 		return toReturn;
 	}
 
