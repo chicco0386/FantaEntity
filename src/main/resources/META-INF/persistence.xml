@@ -8,7 +8,7 @@
 	<persistence-unit name="FantaFormazioneService"
 		transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:jboss/FantaFormazioneWebDatasource_Service</jta-data-source>
+		<jta-data-source>java:jboss/FantaFormazioneWebDatasource</jta-data-source>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="none" />
