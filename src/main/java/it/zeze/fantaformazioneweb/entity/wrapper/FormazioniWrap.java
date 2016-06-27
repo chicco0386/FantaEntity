@@ -19,6 +19,12 @@ public class FormazioniWrap implements java.io.Serializable {
 		utentiFormazioni = new UtentiFormazioniWrap(toCopy.getUtentiFormazioni());
 		giocatori = new GiocatoriWrap(toCopy.getGiocatori());
 	}
+	
+	public Formazioni unwrap(){
+		Formazioni toReturn = new Formazioni(id.unwrap(), utentiFormazioni.unwrap(), giocatori.unwrap());
+		toReturn.setPrezzoAcquisto(prezzoAcquisto);	
+		return toReturn;
+	}
 
 	public FormazioniIdWrap getId() {
 		return id;

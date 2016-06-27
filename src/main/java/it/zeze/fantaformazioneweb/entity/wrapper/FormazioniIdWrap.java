@@ -13,6 +13,11 @@ public  class FormazioniIdWrap implements java.io.Serializable {
 		idGiocatore = toCopy.getIdGiocatore();
 		idUtentiFormazioni = toCopy.getIdUtentiFormazioni();
 	}
+	
+	public FormazioniId unwrap(){
+		FormazioniId toReturn = new FormazioniId(idGiocatore, idUtentiFormazioni);
+		return toReturn;
+	}
 
 	public int getIdGiocatore() {
 		return idGiocatore;
