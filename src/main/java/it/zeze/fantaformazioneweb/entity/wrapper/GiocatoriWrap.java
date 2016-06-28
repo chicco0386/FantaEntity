@@ -136,5 +136,17 @@ public class GiocatoriWrap implements java.io.Serializable {
 	public void setProbabiliFormazionis(Set<ProbabiliFormazioniWrap> probabiliFormazionis) {
 		this.probabiliFormazionis = probabiliFormazionis;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		boolean equals = false;
+		if (o instanceof GiocatoriWrap) {
+			GiocatoriWrap giocatoreToCompare = (GiocatoriWrap) o;
+			if (giocatoreToCompare.getId() == this.id) {
+				equals = true;
+			}
+		}
+		return equals;
+	}
 
 }
